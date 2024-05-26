@@ -1,0 +1,138 @@
+.overall_registration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100vh;
+}
+
+#registrationForm {
+    width: 50%;
+    padding: 50px;
+    border: 1px solid #f3f2f244;
+    border-radius: 10px;
+    box-shadow: 5px 5px 50px rgb(82, 81, 81);
+    padding-top: 0px;
+    height: auto;
+}
+
+h3 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+table {
+    width: 100%;
+}
+
+td,
+th {
+    padding: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+select {
+    padding: 8px;
+    margin: 0 5px;
+    width: auto;
+    height: auto;
+}
+
+.side_by_side_data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit_button,
+.reset_button {
+    width: 50%;
+    padding: 10px;
+    margin-top: auto;
+    background-color: #587ae9;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: auto;
+    font-size: 1rem;
+    padding-right: 0%;
+    padding-left: 0%;
+}
+
+.submit {
+    width: 100%;
+    text-align: center;
+    width: 200px;
+}
+
+.reset {
+    width: 100%;
+    text-align: center;
+    width: 200px;
+}
+
+.submit_button:hover,
+.reset_button:hover {
+    background-color: #45a049;
+}
+
+
+/* ---------------------------------------------HEADER PATH----------- */
+
+header {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.menu_icon_inner {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 4px 0;
+    margin-left: 25px;
+}
+
+.menu_icon_button {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
+
+.navlist {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: space-evenly;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 100px;
+    color: black;
+    font-size: 1.1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.log_out {
+    align-items: center;
+    margin-left: 300px;
+    margin-right: 100px;
+}

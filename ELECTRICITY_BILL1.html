@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Electricity_Bill</title>
+    <link rel="stylesheet" href="ELECTRICITY_BILL1.css">
+    <script src="ELECTRICITY_BILL1.js"></script>
+</head>
+
+<body>
+    <div class="overall_registration">
+
+        <form id="registrationForm">
+            <div class="Registration_from">
+                <h3>Registration</h3>
+                <table>
+                    <!-- 1st row -->
+                    <thead>
+                        <tr>
+                            <td>
+                                <label for="Consumer_ID">Consumer_ID</label>
+                            </td>
+                            <td>
+                                <input type="number" name="Consumer_ID" placeholder="Consumer_ID" required>
+                            </td>
+                            <td>
+                                <label for="Bill_No">Bill_No</label>
+                            </td>
+                            <td>
+                                <input type="number" name="Bill_No" placeholder="Bill_No" required>
+                            </td>
+                        </tr>
+                    </thead>
+                    <!-- 2nd row -->
+                    <tr class="side_by_side_row">
+                        <td>
+                            <label for="customerName">Customer_Name</label>
+                        </td>
+                        <td class="side_by_side_data">
+                            <select name="title" id="title_customer">
+                                <option value="">Title</option>
+                                <option value="Mr">Mr.</option>
+                                <option value="Ms">Ms.</option>
+                                <option value="Mrs">Mrs.</option>
+                                <option value="Dr">Dr.</option>
+                            </select>
+                            <input type="text" class="Customer_Name" name="customerName" placeholder="Customer_Name" required>
+                        </td>
+                        <td>
+                            <label for="email">Email address:</label>
+                        </td>
+                        <td>
+                            <input type="email" name="email" placeholder="Email" required>
+                        </td>
+                    </tr>
+                    <!-- 3rd row -->
+                    <tr>
+                        <td>
+                            <label for="Mobile_number">Mobile_number</label>
+                        </td>
+                        <td class="side_by_side_data">
+                            <select name="Mobile_country_code">
+                                <option value="Afghanistan (+93)">AF +93</option>
+                                <option value="Bahamas (+1242)">BS +1242</option>
+                                <option value="Canada (+1)">CA +1</option>
+                                <option value="Denmark (+45)">DK +45</option>
+                                <option value="Egypt (+20)">EG +20</option>
+                                <option value="Finland (+358)">FI +358</option>
+                                <option value="Germany (+49)">DE +49</option>
+                                <option value="India (+91)">IN +91</option>
+                                <option value="Japan (+81)">JP +81</option>
+                                <option value="Kenya (+254)">KE +254</option>
+                                <option value="Liberia (+231)">LR +231</option>
+                                <option value="Mexico (+52)">MX +52</option>
+                                <option value="Netherlands (+31)">NL +31</option>
+                                <option value="New Zealand (+64)">NZ +64</option>
+                                <option value="Philippines (+63)">PH +63</option>
+                                <option value="Qatar (+974)">QA +974</option>
+                                <option value="Russia (+7)">RU +7</option>
+                                <option value="South Africa (+27)">ZA +27</option>
+                                <option value="Thailand (+66)">TH +66</option>
+                                <option value="Turkey (+90)">TR +90</option>
+                                <option value="Venezuela (+58)">VE +58</option>
+                                <option value="Uganda (+256)">UG +256</option>
+                                <option value="Yemen (+967)">YE +967</option>
+                                <option value="Zambia (+260)">ZM +260</option>
+                            </select>
+                            <input type="number" class="Mobile_number" name="Mobile_number" placeholder="Mobile_number" required>
+                        </td>
+                        <td>
+                            <label for="UserID">UserID:</label>
+                        </td>
+                        <td>
+                            <input type="number" name="UserID" placeholder="UserID" required>
+                        </td>
+                    </tr>
+                    <!-- 4th row -->
+                    <tr>
+                        <td>
+                            <label for="Password">Password</label>
+                        </td>
+                        <td>
+                            <input type="password" name="Password" placeholder="Password" required>
+                        </td>
+                        <td>
+                            <label for="Confirm_Password">Confirm Password</label>
+                        </td>
+                        <td>
+                            <input type="password" name="Confirm_Password" placeholder="Confirm Password" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="submit" colspan="2">
+                            <button class="submit_button" type="submit">Register</button>
+                        </td>
+                        <td class="reset" colspan="2">
+                            <button class="reset_button" type="reset">Reset</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+
+    </div>
+    <!-- Acknowledgement -->
+    <div style="display:none;" id="acknowledgment" class="acknowledgment_div">
+        <h1>Consumer Registration successful</h1>
+        <p><strong>Customer ID:</strong> <span id="customerId"></span></p>
+        <p><strong>Customer Name:</strong> <span id="customerNameDisplay"></span></p>
+        <p><strong>Customer Email:</strong> <span id="customerEmailDisplay"></span></p>
+        <button type="button" onclick="showHomePage()">Continue</button>
+    </div>
+
+    <!-- Home page -->
+    <div id="home_page" style="display: none;">
+        <!-- Header section -->
+        <header id="header">
+            <button type="button" class="menu_icon_button">
+            <div class="menu_icon">
+                <div class="menu_icon_inner"></div>
+                <div class="menu_icon_inner"></div>
+                <div class="menu_icon_inner"></div>
+            </div>
+        </button>
+            <ul class="navlist">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Pay Bill</a></li>
+                <li><a href="#">Complaint Register</a></li>
+                <li><a href="#">Complaint Status</a></li>
+            </ul>
+            <div class="log_out">
+                <p>Welcome :- <span id="home_customer_name"></span></p>
+                <button type="submit" onclick="logOut()">LOG OUT</button>
+            </div>
+        </header>
+    </div>
+
+
+
+    <!-- --------------------------------JAVA SCRIPT   ----------------- -->
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('registrationForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const customerId = Math.floor(Math.random() * 10000000000000);
+                document.getElementById('customerId').textContent = customerId;
+
+                const title = document.getElementById('title_customer').value;
+                document.getElementById('customerNameDisplay').textContent = title + ' ' + this.elements['customerName'].value;
+                document.getElementById('customerEmailDisplay').textContent = this.elements['email'].value;
+
+                document.querySelector('.overall_registration').style.display = 'none';
+                document.getElementById('acknowledgment').style.display = 'block';
+            });
+        });
+
+        // --------------------------------home-page-----------
+
+        // -----------============header================
+
+        function showHomePage() {
+            document.getElementById('acknowledgment').style.display = 'none';
+            document.getElementById('home_page').style.display = 'block';
+
+            const customerName = document.getElementById('customerNameDisplay').textContent;
+            // const customer_title = document.getElementById('title_customer').textContent;
+            const title = document.getElementById('title_customer').value;
+            document.getElementById('home_customer_name').textContent = customerName;
+
+        }
+
+        // ----------------------log out----------------
+
+        function logOut() {
+            document.getElementById('registrationForm').style.display = 'block';
+            document.getElementById('acknowledgment').style.display = 'none';
+            document.getElementById('home_page').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
